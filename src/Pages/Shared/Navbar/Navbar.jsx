@@ -5,7 +5,7 @@ import logo from '../../../assets/logo.png'
 const Navbar = () => {
     const navItems = <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/blog'>Blog</Link></li>
+        <li><Link to='/blogs'>Blog</Link></li>
         <li><Link to='/allToy'>All Toy</Link></li>
         <li><Link to='/myToy'>My Toy</Link></li>
         <li><Link to='/addToy'>Add Toy</Link></li>

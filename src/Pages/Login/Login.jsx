@@ -1,7 +1,9 @@
 // import { fromJSON } from 'postcss';
+import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { useContext, useState } from 'react';
-import { Form, Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
 import img from '../../assets/login.png'
+import app from '../../firebase/firebase.config';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Login = () => {
@@ -12,6 +14,8 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location?.state?.from?.pathname || "/";
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
 
     const handleLogin = event => {
         setStatus(null);
@@ -24,16 +28,15 @@ const Login = () => {
         const handleGoogleSignIn = () => {
             setStatus(null);
             setError(null);
-            googleSignIn()
-                .then((result) => {
-                    setError(null);
-                    setStatus("Sign In Successfull");
-                    setUser(result.user);
-                    navigate(from, { replace: true });
+            signInWithPopup(auth, provider)
+                .then(result => {
+                    const user = result.user;
+                    console.log(user);
+                    navigate(from, { replace: true })
                 })
-                .catch((error) => {
-                    setError(error.message);
-                });
+                .catch(error => {
+                    console.log(error);
+                })
         };
 
         loginWithEmail(email, password)
@@ -87,16 +90,16 @@ const Login = () => {
                         </Form>
                         <p className='my-4 text-center'>New to Kidoz? <Link className='font-bold text-cyan-500' to='/register'>SignUp</Link></p>
                         <div className="text-center">
-                                {status ? (
-                                    <p className="text-teal-600">{status}</p>
-                                ) : (
-                                    <></>
-                                )}
-                                {error ? (
-                                    <p className="text-red-500">{error}</p>
-                                ) : (
-                                    <></>
-                                )}
+                            {status ? (
+                                <p className="text-teal-600">{status}</p>
+                            ) : (
+                                <></>
+                            )}
+                            {error ? (
+                                <p className="text-red-500">{error}</p>
+                            ) : (
+                                <></>
+                            )}
                         </div>
                     </div>
                 </div>
