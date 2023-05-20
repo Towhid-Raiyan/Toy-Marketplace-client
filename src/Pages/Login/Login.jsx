@@ -34,7 +34,7 @@ const handleLogin = event =>{
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <input type="submit" className="btn btn-accent" value="Login" />
+                                <input type="submit" className="btn btn-accent font-bold" value="Login" />
 
                             </div>
                         </form>
