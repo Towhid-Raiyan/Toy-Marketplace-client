@@ -8,13 +8,6 @@ const Footer = () => {
                     <img src={logo} alt="" />
                     <p>Kidoz Toys Shop<br />Providing reliable toys since 2012</p>
                 </div>
-                {/* <div>
-                <span className="footer-title">Services</span>
-                <a className="link link-hover">Branding</a>
-                <a className="link link-hover">Design</a>
-                <a className="link link-hover">Marketing</a>
-                <a className="link link-hover">Advertisement</a>
-            </div> */}
                 <div>
                     <span className="footer-title">Follow Us</span>
                     <div className="grid grid-flow-col gap-4">
