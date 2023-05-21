@@ -1,14 +1,38 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import AllToyTable from "./AllToyTable";
 
 const AllToy = () => {
     const [allToys, setAllToy] = useState([]);
+    const [searchItem, setSearchItem] = useState(null);
+    const searchInputRef = useRef(null);
 
     useEffect(() => {
-        fetch('http://localhost:5000/toys')
-            .then(res => res.json())
-            .then(data => setAllToy(data))
-    }, [])
+        if (searchItem) {
+            fetch(`http://localhost:5000/toys?name=${searchItem}`)
+                .then((res) => res.json())
+                .then((data) => {
+                    setAllToy(data);
+                });
+        } else if (!searchItem) {
+            fetch(`http://localhost:5000/toys`)
+                .then((res) => res.json())
+                .then((data) => {
+                    setAllToy(data);
+                });
+        }
+    }, [searchItem]);
+
+    const setSearch = (event) => {
+        event.preventDefault();
+        const category = searchInputRef.current.value;
+        setSearchItem(category);
+    };
+
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/toys')
+    //         .then(res => res.json())
+    //         .then(data => setAllToy(data))
+    // }, [])
     return (
         <div>
             <div className="text-center my-6">
@@ -26,8 +50,15 @@ const AllToy = () => {
                                 <th>Available Quantity</th>
                                 <th>Price</th>
                                 <th className="text-end">
-                                <input type="text" placeholder="Search Toy" className="input input-bordered input-sm w-1/2 max-w-xs" />
-                                <button className="btn btn-accent btn-sm ml-3">Search</button>
+                                    <input
+                                        className="input input-bordered input-accent me-4"
+                                        type="text"
+                                        name="search"
+                                        ref={searchInputRef}
+                                    />
+                                    <button className="btn btn-accent text-white" onClick={setSearch}>
+                                        Search
+                                    </button>
                                 </th>
                             </tr>
                         </thead>
