@@ -26,7 +26,6 @@ const Offers = () => {
                     20% Discount on all products
                 </p>
 
-                {/* <TimeCount></TimeCount> */}
                 <button className="btn btn-accent text-black mb-16" >Purchase</button>
             </div>
         </div>
