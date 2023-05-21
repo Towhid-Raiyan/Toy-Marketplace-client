@@ -28,11 +28,6 @@ const AllToy = () => {
         setSearchItem(category);
     };
 
-    // useEffect(() => {
-    //     fetch('http://localhost:5000/toys')
-    //         .then(res => res.json())
-    //         .then(data => setAllToy(data))
-    // }, [])
     return (
         <div>
             <div className="text-center my-6">
