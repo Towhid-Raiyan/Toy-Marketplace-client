@@ -6,6 +6,8 @@ import Blogs from "../Pages/Blogs/Blogs";
 import Errorpage from "../Pages/Errorpage/Errorpage";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
+import EditToy from "../Pages/MyToy/EditToy";
+import MyToy from "../Pages/MyToy/MyToy";
 import Register from "../Pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 
@@ -37,6 +39,21 @@ const router = createBrowserRouter([
             {
                 path: '/addToy',
                 element: <PrivateRoute><AddToy></AddToy></PrivateRoute>
+            },
+            {
+                path: "mytoys",
+                element: <MyToy></MyToy>,
+            },
+            {
+                path: "edittoy/:id",
+                element: <EditToy></EditToy>,
+                loader: ({ params }) =>
+                    fetch(`https://khela-ghor-server.vercel.app/toy/${params.id}`, {
+                        method: "GET",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                    }),
             },
             {
                 path:'/*',
