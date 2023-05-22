@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import pic1 from '../../../assets/Carosel/caro1.png';
 import pic2 from '../../../assets/Carosel/caro2.png';
 
@@ -12,7 +13,9 @@ const Banner = () => {
                         <h2 className='text-6xl font-bold'>Lucrative Toys For Kids</h2>
                         <p>Our shop is very popular for vehicle type toys in the country. Providing quality products is our only goal. </p>
                         <div>
-                            <button className="btn btn-accent">View Toys</button>
+                            <Link to={'/allToy'}>
+                                <button className="btn btn-accent">View Toys</button>
+                            </Link>
                         </div>
                     </div>
                 </div>

@@ -1,9 +1,9 @@
 import logo from '../../../assets/logo.png'
-
+// bg-base-200
 const Footer = () => {
     return (
-        <footer className=" bg-base-200">
-            <div className='footer p-10 bg-base-200 text-base-content justify-around'>
+        <footer className=" bg-black my-3"> 
+            <div className='footer p-10 bg-black text-white text-base-content justify-around'>
                 <div>
                     <img src={logo} alt="" />
                     <p>Kidoz Toys Shop<br />Providing reliable toys since 2012</p>
@@ -24,7 +24,7 @@ const Footer = () => {
                     <p >Dhaka, Bangladesh</p>
                 </div>
             </div>
-            <div className='footer footer-center pb-4 bg-base-200 text-base-content'>
+            <div className='footer footer-center pb-4 bg-black text-white text-base-content'>
                 <p>Copyright © 2023 - All right reserved by Kidoz Toys Shop</p>
             </div>
         </footer>

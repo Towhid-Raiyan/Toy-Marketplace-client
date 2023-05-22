@@ -1,10 +1,6 @@
-// import { fromJSON } from 'postcss';
-// import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { useContext, useState } from 'react';
 import Lottie from 'react-lottie';
 import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
-// import img from '../../assets/login.png'
-// import app from '../../firebase/firebase.config';
 import { AuthContext } from '../../Provider/AuthProvider';
 import animationData   from "../../assets/lottie/register.json";
 
@@ -16,8 +12,6 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location?.state?.from?.pathname || "/";
-    // const auth = getAuth(app);
-    // const provider = new GoogleAuthProvider();
 
     const handleGoogleSignIn = () => {
         setStatus(null);

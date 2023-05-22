@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { useForm } from "react-hook-form";
@@ -41,7 +41,7 @@ const EditToy = () => {
             confirmButtonText: "Yes, Edit!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://khela-ghor-server.vercel.app/edittoy/${_id}`, {
+                fetch(`http://localhost:5000/edittoy/${_id}`, {
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json",

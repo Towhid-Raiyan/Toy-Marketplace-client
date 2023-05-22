@@ -12,7 +12,7 @@ const MyToy = () => {
     const { user } = useContext(AuthContext);
     const email = user?.email;
     useEffect(() => {
-        console.log(sort);
+        // console.log(sort);
         fetch(`http://localhost:5000/mytoys?email=${email}&sort=${sort}`)
             .then((res) => res.json())
             .then((data) => {

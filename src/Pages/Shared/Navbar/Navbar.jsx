@@ -186,11 +186,11 @@ const Navbar = () => {
                                 </li>
                             )}
                         {user ? (
-                            <li className="p-2 bg-teal-300 rounded-xl">
+                            <li className="py-2 bg-teal-300 rounded-xl px-3">
                                 <button onClick={handleLogOut}>Logout</button>
                             </li>
                         ) : (
-                            <li className="p-2 bg-teal-300 rounded-xl">
+                            <li className="py-2 bg-teal-300 rounded-xl px-3">
                                 <NavLink
                                     to="/login"
                                     className={({ isActive }) =>
