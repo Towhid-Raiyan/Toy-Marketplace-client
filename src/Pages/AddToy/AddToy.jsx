@@ -96,9 +96,9 @@ const AddToy = () => {
                                         className="p-4 border-2 w-96 rounded-lg"
                                         {...register("subcategory", { required: true })}
                                     >
-                                        <option value="car">Car</option>
-                                        <option value="bike">Bike</option>
-                                        <option value="truck">Truck</option>
+                                        <option value="car">car</option>
+                                        <option value="bike">bike</option>
+                                        <option value="truck">truck</option>
                                     </select>
                                 </td>
                             </tr>
