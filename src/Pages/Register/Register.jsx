@@ -1,8 +1,10 @@
 import { useContext, useState } from 'react';
+import Lottie from 'react-lottie';
 import { Link, Navigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import img from '../../assets/login.png'
+// import img from '../../assets/login.png'
 import { AuthContext } from '../../Provider/AuthProvider';
+import animationData   from "../../assets/lottie/register.json";
 
 
 const Register = () => {
@@ -61,11 +63,20 @@ const Register = () => {
         form.reset();
 
     };
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: animationData,
+        rendererSettings: {
+          preserveAspectRatio: 'xMidYMid slice'
+        }
+      };
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="ml-12 w-1/2">
-                    <img src={img} alt="" className='rounded-xl' />
+                    {/* <img src={img} alt="" className='rounded-xl' /> */}
+                    <Lottie options={defaultOptions} height={600} width={600} />
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">

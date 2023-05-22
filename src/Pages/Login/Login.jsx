@@ -101,16 +101,7 @@ const Login = () => {
                                     className="input input-bordered"
                                 />
                             </div>
-                            <p className="text-md">
-                               
-                                New here? Please{" "}
-                                <Link
-                                    to={"/register"}
-                                    className="text-cyan-500 font-semibold"
-                                >
-                                    Register here
-                                </Link>
-                            </p>
+                            
                             <div className="text-center">
                                 {status ? (
                                     <p className="text-teal-600">{status}</p>
@@ -137,6 +128,16 @@ const Login = () => {
                                     Login with Google
                                 </button>
                             </div>
+                            <p className="text-md text-center">
+                               
+                                New here? Please{" "}
+                                <Link
+                                    to={"/register"}
+                                    className="text-cyan-500 font-semibold"
+                                >
+                                    Register here
+                                </Link>
+                            </p>
                         </div>
                     </Form>
                 </div>

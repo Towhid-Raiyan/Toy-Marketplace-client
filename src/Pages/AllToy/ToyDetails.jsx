@@ -1,27 +1,33 @@
 import { useLoaderData } from "react-router-dom";
 import ReactStarsRating from "react-awesome-stars-rating";
+import setTitle from "../../Title/setTitle";
 const ToyDetails = () => {
-    const allToy = useLoaderData();
+
+    const toy = useLoaderData();
     const {
-        PictureUrl,
-        ToyName,
+        picture,
+        name,
         SellerName,
         SellerEmail,
-        Price,
-        Quantity,
-        Rating,
-        Description,
-    } = allToy;
-    const ratingValue = parseFloat(Rating);
-    console.log(allToy);
+        price,
+        quantity,
+        rating,
+        description,
+        subcategory,
+        _id,
+    } = toy;
+    const ratingValue = parseFloat(rating);
+    console.log(toy);
+    setTitle(`${name}`);
+
     return (
         <section>
             <div className="relative mx-auto max-w-screen-xl px-4 py-8">
                 <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
                     <div className="grid grid-cols-2 gap-4 md:grid-cols-1">
                         <img
-                            alt={ToyName}
-                            src={PictureUrl}
+                            alt={name}
+                            src={picture}
                             className="aspect-square w-full rounded-xl object-cover"
                         />
                     </div>
@@ -34,11 +40,11 @@ const ToyDetails = () => {
                         <div className="mt-8 flex justify-between">
                             <div className="max-w-[35ch] space-y-2">
                                 <h1 className="text-xl font-bold sm:text-2xl">
-                                    {ToyName}
+                                    {name}
                                 </h1>
 
                                 <p className="text-lg font-bold">
-                                    Price: ${Price}
+                                    Price: ${price}
                                 </p>
                                 <p className="text-lg   ">
                                     Seller: {SellerName}
@@ -47,7 +53,7 @@ const ToyDetails = () => {
                                     Seller Mail: {SellerEmail}
                                 </p>
                                 <p className="text-lg   ">
-                                    Quantity: {Quantity}
+                                    Quantity: {quantity}
                                 </p>
                                 <div className="flex items-center gap-1">
                                     <p className="text-gray-500 text-lg">
@@ -68,7 +74,7 @@ const ToyDetails = () => {
                         <div className="mt-4">
                             <div className="prose max-w-none">
                                 <p>
-                                    {Description}
+                                    {description}
                                 </p>
                             </div>
                         </div>

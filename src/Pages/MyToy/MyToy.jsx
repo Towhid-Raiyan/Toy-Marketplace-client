@@ -27,7 +27,7 @@ const MyToy = () => {
             text: "You won't be able to revert this!",
             icon: "warning",
             showCancelButton: true,
-            confirmButtonColor: "#FBBD23",
+            confirmButtonColor: "#06bdb0",
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, delete my toy!",
         }).then((result) => {
@@ -93,7 +93,7 @@ const MyToy = () => {
                             <th>Serial</th>
                             <th>Name</th>
                             <th>Seller</th>
-                            <th>Toy Type</th>
+                            <th>SubCategory</th>
                             <th>Price</th>
                             <th>Quantity</th>
                             <th>Action</th>

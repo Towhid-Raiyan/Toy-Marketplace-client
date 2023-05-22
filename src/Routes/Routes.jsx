@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main/Main";
 import AddToy from "../Pages/AddToy/AddToy";
 import AllToy from "../Pages/AllToy/AllToy";
+import ToyDetails from "../Pages/AllToy/ToyDetails";
 import Blogs from "../Pages/Blogs/Blogs";
 import Errorpage from "../Pages/Errorpage/Errorpage";
 import Home from "../Pages/Home/Home/Home";
@@ -37,6 +38,21 @@ const router = createBrowserRouter([
                 element: <AllToy></AllToy>
             },
             {
+                path: "toy/:id",
+                element: (
+                    <PrivateRoute>
+                        <ToyDetails></ToyDetails>
+                    </PrivateRoute>
+                ),
+                loader: ({ params }) =>
+                    fetch(`http://localhost:5000/toy/${params.id}`, {
+                        method: "GET",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                    }),
+            },
+            {
                 path: '/addToy',
                 element: <PrivateRoute><AddToy></AddToy></PrivateRoute>
             },
@@ -48,7 +64,7 @@ const router = createBrowserRouter([
                 path: "edittoy/:id",
                 element: <EditToy></EditToy>,
                 loader: ({ params }) =>
-                    fetch(`https://khela-ghor-server.vercel.app/toy/${params.id}`, {
+                    fetch(`http://localhost:5000/toy/${params.id}`, {
                         method: "GET",
                         headers: {
                             "Content-Type": "application/json",

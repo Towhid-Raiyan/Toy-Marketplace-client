@@ -17,7 +17,7 @@ const Offers = () => {
                     className="text-white text-4xl md:text-6xl font-bold mt-24  "
                     data-aos="fade-right"
                 >
-                    EID FLASH SALE
+                    SUMMER FLASH SALE
                 </h1>
                 <p
                     className="text-white text-2xl font-semibold mt-2"
