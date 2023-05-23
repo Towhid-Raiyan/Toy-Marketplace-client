@@ -1,7 +1,9 @@
 import Lottie from 'react-lottie';
 import { Link} from 'react-router-dom';
 import animationData from "../../assets/lottie/404.json";
+import setTitle from '../../Title/setTitle';
 const Errorpage = () => {
+    setTitle('404');
     // const error = useRouteError();
     // const status = useRouteError();
     const defaultOptions = {

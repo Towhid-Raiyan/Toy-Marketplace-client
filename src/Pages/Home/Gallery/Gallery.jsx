@@ -7,19 +7,28 @@ import img6 from '../../../assets/gallery/gallery-6.png';
 
 const Gallery = () => {
     return (
-        <div className='bg-gray-100'>
-            <h3 className='text-center text-4xl md:text-6xl font-bold text-cyan-600 my-5'>Gallery</h3>
-            <div className="w-full ">
-                <div className='flex'>
-                    <figure className='flex-1 w-1/3 m-4'><img src={img1} alt="car!" className='rounded-lg'/></figure>
-                    <figure className='flex-1 w-1/3 m-4'><img src={img2} alt="car!" className='rounded-lg'/></figure>
-                    <figure className='flex-1 w-1/3 m-4'><img src={img3} alt="car!" className='rounded-lg'/></figure>
-                </div>
-                <div className='flex'>
-                    <figure className='flex-1 w-1/3 m-4'><img src={img4} alt="car!" className='rounded-lg'/></figure>
-                    <figure className='flex-1 w-1/3 m-4'><img src={img5} alt="car!" className='rounded-lg'/></figure>
-                    <figure className='flex-1 w-1/3 m-4'><img src={img6} alt="car!" className='rounded-lg'/></figure>
-                </div>
+        <div className=''>
+            <h3 className='text-center text-4xl md:text-6xl font-bold text-cyan-600 my-7'>Gallery</h3>
+            <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-3 bg-sky-100">
+                {/* <div className='flex'> */}
+                    <div>
+                        <img src={img1} className='max-w-full m-3 rounded hover:scale-90' alt="" />
+                    </div>
+                    <div>
+                        <img src={img2} className='max-w-full m-3 rounded hover:scale-90' alt="" />
+                    </div>
+                    <div>
+                        <img src={img3} className='max-w-full m-3 rounded hover:scale-90' alt="" />
+                    </div>
+                    <div>
+                        <img src={img4} className='max-w-full m-3 rounded hover:scale-90' alt="" />
+                    </div>
+                    <div>
+                        <img src={img5} className='max-w-full m-3 rounded hover:scale-90' alt="" />
+                    </div>
+                    <div>
+                        <img src={img6} className='max-w-full m-3 rounded hover:scale-90' alt="" />
+                    </div>
             </div>
         </div>
     );

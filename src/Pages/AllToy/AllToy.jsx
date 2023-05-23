@@ -1,20 +1,22 @@
 import { useEffect, useRef, useState } from "react";
 import AllToyTable from "./AllToyTable";
+import setTitle from "../../Title/setTitle";
 
 const AllToy = () => {
+    setTitle('All Toy');
     const [allToys, setAllToy] = useState([]);
     const [searchItem, setSearchItem] = useState(null);
     const searchInputRef = useRef(null);
 
     useEffect(() => {
         if (searchItem) {
-            fetch(`http://localhost:5000/toys?name=${searchItem}`)
+            fetch(`https://toy-marketplace-server-zeta.vercel.app/toys?name=${searchItem}`)
                 .then((res) => res.json())
                 .then((data) => {
                     setAllToy(data);
                 });
         } else if (!searchItem) {
-            fetch(`http://localhost:5000/toys`)
+            fetch(`https://toy-marketplace-server-zeta.vercel.app/toys`)
                 .then((res) => res.json())
                 .then((data) => {
                     setAllToy(data);

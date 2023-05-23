@@ -1,7 +1,7 @@
 
 const Reviews = () => {
     return (
-        <div className="mx-5 md:mx-28 my-32 ">
+        <div className="mx-5 md:mx-28 my-10 ">
             <section className="text-neutral-700 dark:text-neutral-300">
                 <div className="mx-auto text-center md:max-w-xl lg:max-w-3xl">
                     <p className="text-center text-4xl md:text-6xl font-bold text-cyan-600 my-5">

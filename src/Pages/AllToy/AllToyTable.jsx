@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 
 const AllToyTable = ({ allToy }) => {
+    
     const { name, price, quantity, subcategory, picture,_id } = allToy;
     return (
 

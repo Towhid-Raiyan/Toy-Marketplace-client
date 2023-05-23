@@ -3,10 +3,12 @@ import Lottie from 'react-lottie';
 import { Link, Navigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Provider/AuthProvider';
-import animationData   from "../../assets/lottie/register.json";
+import animationData from "../../assets/lottie/register.json";
+import setTitle from '../../Title/setTitle';
 
 
 const Register = () => {
+    setTitle('Register');
     const { createUser, updateInfo, setUser, logOut } = useContext(AuthContext);
     const [status, setStatus] = useState(null);
     const [error, setError] = useState(null);
@@ -67,9 +69,9 @@ const Register = () => {
         autoplay: true,
         animationData: animationData,
         rendererSettings: {
-          preserveAspectRatio: 'xMidYMid slice'
+            preserveAspectRatio: 'xMidYMid slice'
         }
-      };
+    };
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row-reverse">

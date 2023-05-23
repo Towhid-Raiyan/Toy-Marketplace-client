@@ -1,5 +1,6 @@
-
+import setTitle from "../../Title/setTitle";
 const Blogs = () => {
+    setTitle('Blog');
     return (
         <div >
             <h3 className="text-3xl text-cyan-600 font-extrabold text-center my-6">Blogs</h3>

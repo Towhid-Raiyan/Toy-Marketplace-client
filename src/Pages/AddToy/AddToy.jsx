@@ -5,7 +5,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import setTitle from "../../Title/setTitle";
 
 const AddToy = () => {
-    setTitle('Add a toy');
+    setTitle('Add Toy');
     const { register, handleSubmit, reset } = useForm();
     const { user } = useContext(AuthContext);
 
@@ -13,7 +13,7 @@ const AddToy = () => {
         data.price = parseFloat(data.price);
         data.quantity = parseInt(data.quantity);
         data.rating = parseFloat(data.rating);
-        fetch("http://localhost:5000/addtoy", {
+        fetch("https://toy-marketplace-server-zeta.vercel.app/addtoy", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -42,9 +42,11 @@ const AddToy = () => {
             >
                 <div className="overflow-x-auto">
                     <table className="table  w-full flex flex-col">
-                        <tbody>
+                        <tbody className="grid grid-cols-2">
                             <tr>
-                                <th>Picture Url</th>
+                                <div>
+                                    <th>Picture Url</th>
+                                </div>
                                 <td>
                                     <input
                                         type="text"
@@ -55,7 +57,9 @@ const AddToy = () => {
                                 </td>
                             </tr>
                             <tr>
-                                <th>Toy Name</th>
+                                <div>
+                                    <th>Toy Name</th>
+                                </div>
                                 <td>
                                     <input
                                         type="text"
@@ -66,7 +70,9 @@ const AddToy = () => {
                                 </td>
                             </tr>
                             <tr>
-                                <th>Seller Name</th>
+                                <div>
+                                    <th>Seller Name</th>
+                                </div>
                                 <td>
                                     <input
                                         type="text"
@@ -78,7 +84,9 @@ const AddToy = () => {
                                 </td>
                             </tr>
                             <tr>
-                                <th>Seller Email</th>
+                                <div>
+                                    <th>Seller Email</th>
+                                </div>
                                 <td>
                                     <input
                                         type="email"
@@ -90,7 +98,9 @@ const AddToy = () => {
                                 </td>
                             </tr>
                             <tr>
-                                <th>Subcategory</th>
+                                <div>
+                                    <th>Subcategory</th>
+                                </div>
                                 <td>
                                     <select
                                         className="p-4 border-2 w-96 rounded-lg"
@@ -103,7 +113,9 @@ const AddToy = () => {
                                 </td>
                             </tr>
                             <tr>
-                                <th>Price</th>
+                                <div>
+                                    <th>Price</th>
+                                </div>
                                 <td>
                                     <input
                                         type="text"
@@ -114,7 +126,9 @@ const AddToy = () => {
                                 </td>
                             </tr>
                             <tr>
-                                <th>Quantity</th>
+                                <div>
+                                    <th>Quantity</th>
+                                </div>
                                 <td>
                                     <input
                                         type="text"
@@ -125,7 +139,9 @@ const AddToy = () => {
                                 </td>
                             </tr>
                             <tr>
-                                <th>Ratings</th>
+                                <div>
+                                    <th>Ratings</th>
+                                </div>
                                 <td>
                                     <input
                                         type="text"
@@ -136,7 +152,9 @@ const AddToy = () => {
                                 </td>
                             </tr>
                             <tr>
-                                <th>Description</th>
+                                <div>
+                                    <th>Description</th>
+                                </div>
                                 <td>
                                     <input
                                         type="text-area"
@@ -150,7 +168,7 @@ const AddToy = () => {
                     </table>
                 </div>
 
-                <input className="btn btn-accent btn-wide" type="submit" />
+                <input className="btn btn-accent btn-wide w-3/5" type="submit" />
             </form>
         </div>
     );

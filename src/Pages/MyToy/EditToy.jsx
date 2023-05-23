@@ -41,7 +41,7 @@ const EditToy = () => {
             confirmButtonText: "Yes, Edit!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/edittoy/${_id}`, {
+                fetch(`https://toy-marketplace-server-zeta.vercel.app/edittoy/${_id}`, {
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json",
@@ -74,9 +74,11 @@ const EditToy = () => {
             >
                 <div className="overflow-x-auto">
                     <table className="table  w-full flex flex-col">
-                        <tbody>
-                            <tr>
-                                <th>Picture Url</th>
+                        <tbody className="grid grid-cols-2 gap-4">
+                            <tr className="w-1/2">
+                                <div className="w-28">
+                                <th >Picture Url</th>
+                                </div>
                                 <td>
                                     <input
                                         type="text"
@@ -91,8 +93,10 @@ const EditToy = () => {
                                     />
                                 </td>
                             </tr>
-                            <tr>
-                                <th>Toy Name</th>
+                            <tr className="w-1/2">
+                                <div>
+                                <th className="w-28">Toy Name</th>
+                                </div>
                                 <td>
                                     <input
                                         type="text"
@@ -105,8 +109,10 @@ const EditToy = () => {
                                     />
                                 </td>
                             </tr>
-                            <tr>
-                                <th>Seller Name</th>
+                            <tr className="w-1/2">
+                                <div>
+                                <th className="w-28">Seller Name</th>
+                                </div>
                                 <td>
                                     <input
                                         type="text"
@@ -119,8 +125,10 @@ const EditToy = () => {
                                     />
                                 </td>
                             </tr>
-                            <tr>
-                                <th>Seller Email</th>
+                            <tr className="w-1/2">
+                                <div>
+                                <th className="w-28"> Seller Email</th>
+                                </div>
                                 <td>
                                     <input
                                         type="email"
@@ -135,8 +143,10 @@ const EditToy = () => {
                                     />
                                 </td>
                             </tr>
-                            <tr>
+                            <tr className="w-1/2">
+                                <div>
                                 <th>Category</th>
+                                </div>
                                 <td>
                                     <select
                                         className="p-4 border-2 w-96 rounded-lg"
@@ -157,8 +167,10 @@ const EditToy = () => {
                                     </select>
                                 </td>
                             </tr>
-                            <tr>
+                            <tr className="w-1/2">
+                                <div>
                                 <th>Price</th>
+                                </div>
                                 <td>
                                     <input
                                         type="text"
@@ -169,9 +181,11 @@ const EditToy = () => {
                                     />
                                 </td>
                             </tr>
-                            <tr>
+                            <tr className="w-1/2 ">
+                                <div>
                                 <th>Quantity</th>
-                                <td>
+                                </div>
+                                <td className="w-3/4">
                                     <input
                                         type="text"
                                         className="p-4 border-2 w-96 rounded-lg"
@@ -181,24 +195,28 @@ const EditToy = () => {
                                     />
                                 </td>
                             </tr>
-                            <tr>
+                            <tr className="w-1/2 ">
+                                <div>
                                 <th>Ratings</th>
-                                <td>
+                                </div>
+                                <td className="w-3/4">
                                     <input
                                         type="text"
-                                        className="p-4 border-2 w-96 rounded-lg"
+                                        className="p-4 border-2 rounded-lg w-96"
                                         placeholder="Rating"
                                         defaultValue={rating}
                                         {...register("rating", {})}
                                     />
                                 </td>
                             </tr>
-                            <tr>
+                            <tr className="w-full">
+                                <div>
                                 <th>Description</th>
-                                <td>
+                                </div>
+                                <td className="">
                                     <input
                                         type="text-area"
-                                        className="p-4 border-2 w-96 rounded-lg"
+                                        className="p-4 border-2  rounded-lg w-96"
                                         placeholder="Description"
                                         defaultValue={description}
                                         {...register("description", {})}
@@ -210,7 +228,7 @@ const EditToy = () => {
                 </div>
 
                 <input
-                    className="btn btn-accent btn-wide text-white"
+                    className="btn btn-accent btn-block w-3/5 text-white"
                     type="submit"
                 />
             </form>

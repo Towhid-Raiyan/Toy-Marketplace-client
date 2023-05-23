@@ -3,8 +3,10 @@ import Lottie from 'react-lottie';
 import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import animationData   from "../../assets/lottie/register.json";
+import setTitle from '../../Title/setTitle';
 
 const Login = () => {
+    setTitle('Login');
     const { googleSignIn, setUser, loginWithEmail } = useContext(AuthContext);
     const [status, setStatus] = useState(null);
     const [error, setError] = useState(null);
