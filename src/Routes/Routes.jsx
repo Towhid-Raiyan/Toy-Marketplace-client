@@ -46,7 +46,7 @@ const router = createBrowserRouter([
                     </PrivateRoute>
                 ),
                 loader: ({ params }) =>
-                    fetch(`https://toy-marketplace-server-zeta.vercel.app/toy/${params.id}`, {
+                    fetch(`https://toy-marketplace-server-towhid-raiyan.vercel.app/toy/${params.id}`, {
                         method: "GET",
                         headers: {
                             "Content-Type": "application/json",
@@ -65,7 +65,7 @@ const router = createBrowserRouter([
                 path: "edittoy/:id",
                 element: <PrivateRoute><EditToy></EditToy></PrivateRoute>,
                 loader: ({ params }) =>
-                    fetch(`https://toy-marketplace-server-zeta.vercel.app/toy/${params.id}`, {
+                    fetch(`https://toy-marketplace-server-towhid-raiyan.vercel.app/toy/${params.id}`, {
                         method: "GET",
                         headers: {
                             "Content-Type": "application/json",

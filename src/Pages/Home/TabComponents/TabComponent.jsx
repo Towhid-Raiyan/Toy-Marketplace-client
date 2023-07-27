@@ -5,7 +5,7 @@ const TabComponent = () => {
     const [activeTab, setActiveTab] = useState('car');
     const [toys, setToys] = useState([]);
     useEffect(() => {
-        fetch(`https://toy-marketplace-server-zeta.vercel.app/toys/${activeTab}`)
+        fetch(`https://toy-marketplace-server-towhid-raiyan.vercel.app/toys/${activeTab}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);

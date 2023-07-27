@@ -41,7 +41,7 @@ const EditToy = () => {
             confirmButtonText: "Yes, Edit!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://toy-marketplace-server-zeta.vercel.app/edittoy/${_id}`, {
+                fetch(`https://toy-marketplace-server-towhid-raiyan.vercel.app/edittoy/${_id}`, {
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json",

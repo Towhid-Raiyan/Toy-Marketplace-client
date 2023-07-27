@@ -13,7 +13,7 @@ const MyToy = () => {
     const email = user?.email;
     useEffect(() => {
         // console.log(sort);
-        fetch(`https://toy-marketplace-server-zeta.vercel.app/mytoys?email=${email}&sort=${sort}`)
+        fetch(`https://toy-marketplace-server-towhid-raiyan.vercel.app/mytoys?email=${email}&sort=${sort}`)
             .then((res) => res.json())
             .then((data) => {
                 setMyToys(data);
@@ -32,7 +32,7 @@ const MyToy = () => {
             confirmButtonText: "Yes, delete my toy!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://toy-marketplace-server-zeta.vercel.app/mytoys/${id}`, {
+                fetch(`https://toy-marketplace-server-towhid-raiyan.vercel.app/mytoys/${id}`, {
                     method: "DELETE",
                 })
                     .then((res) => res.json())

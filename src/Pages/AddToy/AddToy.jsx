@@ -13,7 +13,7 @@ const AddToy = () => {
         data.price = parseFloat(data.price);
         data.quantity = parseInt(data.quantity);
         data.rating = parseFloat(data.rating);
-        fetch("https://toy-marketplace-server-zeta.vercel.app/addtoy", {
+        fetch("https://toy-marketplace-server-towhid-raiyan.vercel.app/addtoy", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

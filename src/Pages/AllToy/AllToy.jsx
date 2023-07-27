@@ -10,16 +10,17 @@ const AllToy = () => {
 
     useEffect(() => {
         if (searchItem) {
-            fetch(`https://toy-marketplace-server-zeta.vercel.app/toys?name=${searchItem}`)
+            fetch(`https://toy-marketplace-server-towhid-raiyan.vercel.app/toys?name=${searchItem}`)
                 .then((res) => res.json())
                 .then((data) => {
                     setAllToy(data);
                 });
         } else if (!searchItem) {
-            fetch(`https://toy-marketplace-server-zeta.vercel.app/toys`)
+            fetch(`https://toy-marketplace-server-towhid-raiyan.vercel.app/toys`)
                 .then((res) => res.json())
                 .then((data) => {
                     setAllToy(data);
+                    console.log(data);
                 });
         }
     }, [searchItem]);
